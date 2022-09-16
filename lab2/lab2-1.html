@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="eng'>
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="description"	content="Data Visualisation"/>
+	<meta name=" keywords"		content="HTML, CSS, D3"/>
+	<meta name="author"			content="Your name here"/>
+	<title>Task 2.1 D3 Data Bindings</title>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+<body>
+	<h1>The D3 Journey starts here...</h1>
+	<h2>Author: LEE WEN HENG</h2>
+	<p id="chart"></p>
+	
+
+	<script>
+	var dataset=[14,5,26,23,9];
+	
+	d3.select("body").selectAll("p")
+	.data(dataset)
+	.enter()
+	.append("p")
+	.style("fill","black")
+	.style("color",function(d,i){
+			return d>10?"#ff0000":"#000";
+		})
+		.text(function(d,i){
+			if(d>10){
+				result="Warning: Joe watched "+d+" cat videos today";
+				}
+			else {
+				result="Joe watched "+d+" cat videos today";
+			}
+			return result;
+		});
+	
+
+		</script>
+		<br><br><br>
+		<p>This paragraph is outside D3 script block</p>
+		<footer>COS30045 Data Visualization - Lab 2</footer>
+			
+			
+</body>
+
+			
+</html>
